@@ -38,7 +38,7 @@ func main() {
 		cipheredText := getUserInput("Enter your text to decipher: ")
 		decipheredText, err := cipherer.Decipher(cipheredText, *secretKey)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error decrypting text: %v\n", err)
+			fmt.Fprintf(os.Stderr, "Error decrypting text: %v\r\n", err)
 			os.Exit(1)
 		}
 
@@ -61,6 +61,6 @@ func getUserInput(msg string) string {
 			continue
 		}
 
-		return strings.TrimRight(result, "\n")
+		return strings.TrimRight(result, "\r\n")
 	}
 }
