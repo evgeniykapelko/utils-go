@@ -13,7 +13,7 @@ type PhoneNumber struct {
 	LastUpdatedAt int64
 }
 
-func (book *PhoneBook) Add(number string, phoneNum string) error {
+func (book *PhoneBook) Add(name string, phoneNum string) error {
 	if _, ok := (*book)[phoneNum]; ok {
 		return errors.New("phone number already exists")
 	}
@@ -22,8 +22,8 @@ func (book *PhoneBook) Add(number string, phoneNum string) error {
 	//n.Number = number
 	//n.LastUpdatedAt = time.Now().Unix()
 
-	(*book)[phoneNum] = PhoneNumber{
-		Number:        number,
+	(*book)[name] = PhoneNumber{
+		Number:        phoneNum,
 		LastUpdatedAt: time.Now().Unix(),
 	}
 
